@@ -41,4 +41,9 @@ public class IngredientTests {
         assertEquals("Name Ingredient is incorrect", actualName, name);
     }
 
+    @Test
+    public void getPriceReturnCorrectValue() {
+        float actualPrice = ingredient.getPrice();
+        assertEquals("Name Ingredient is incorrect", actualPrice, price, 0);
+    }
 }
