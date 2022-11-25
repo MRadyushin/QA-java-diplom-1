@@ -23,5 +23,12 @@ public class BurgerTests {
         assertEquals(bun, burger.bun);
     }
 
+    @Test
+    public void addIngredientAddValueToListCorrect() {
+        Burger burger = new Burger();
+        burger.addIngredient(ingredient);
+        assertTrue(burger.ingredients.contains(ingredient));
+    }
+
 
 }
