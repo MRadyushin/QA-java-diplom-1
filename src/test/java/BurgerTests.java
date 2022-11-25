@@ -37,4 +37,14 @@ public class BurgerTests {
         burger.removeIngredient(0);
         assertFalse(burger.ingredients.contains(ingredient));
     }
+
+    @Test
+    public void moveIngredientMoveIngredientToLIst() {
+        Burger burger = new Burger();
+        burger.addIngredient(ingredient);
+        burger.addIngredient(ingredient);
+        burger.moveIngredient(0, 1);
+        assertEquals(ingredient, burger.ingredients.get(1));
+    }
+
 }
