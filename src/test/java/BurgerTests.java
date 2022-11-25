@@ -59,4 +59,20 @@ public class BurgerTests {
         float actual = burger.getPrice();
         assertEquals(0, Float.compare(10, actual));
     }
+
+    @Test
+    public void getReceiptReturnCorrectValue() {
+        Burger burger = new Burger();
+        Ingredient ingredient = new Ingredient(IngredientType.FILLING, "dinosaur", 200f);
+        when(bun.getName()).thenReturn("white bun");
+        burger.setBuns(bun);
+        burger.addIngredient(ingredient);
+        String expected = "(==== white bun ====)\r\n" +
+                "= filling dinosaur =\r\n" +
+                "(==== white bun ====)\r\n" +
+                "\r\n" +
+                "Price: 200,000000\r\n";
+        String actual = burger.getReceipt();
+        assertEquals(expected, actual);
+    }
 }
