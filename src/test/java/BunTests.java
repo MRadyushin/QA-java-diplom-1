@@ -18,8 +18,8 @@ public class BunTests {
     @Parameterized.Parameters(name = "Название булочки: {0}/ Цена булочки: {1}")
     public static Object[][] getData() {
         return new Object[][]{
-                {"Чёрная", 100},
-                {"Красная", 300},
+                {"Чёрная", 100f},
+                {"Красная", 300f},
                 {"Жёлтая", 100.5f},
                 {"Белая", 10.55f}
         };
