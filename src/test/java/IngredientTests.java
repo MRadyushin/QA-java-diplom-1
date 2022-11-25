@@ -13,7 +13,6 @@ public class IngredientTests {
     private final String ingredientTypeValue;
     private final String name;
     private final float price;
-
     private Ingredient ingredient;
     private IngredientType ingredientType;
 
@@ -30,6 +29,7 @@ public class IngredientTests {
                 {"SAUCE", "sour cream", 200f},
         };
     }
+
     @Before
     public void setUp() {
         this.ingredient = new Ingredient(this.ingredientType.valueOf(ingredientTypeValue), name, price);
@@ -46,4 +46,10 @@ public class IngredientTests {
         float actualPrice = ingredient.getPrice();
         assertEquals("Name Ingredient is incorrect", actualPrice, price, 0);
     }
+
+    @Test
+    public void getTypeReturnCorrectValue() {
+        assertEquals(this.ingredientType.valueOf(ingredientTypeValue), this.ingredient.getType());
+    }
+
 }
