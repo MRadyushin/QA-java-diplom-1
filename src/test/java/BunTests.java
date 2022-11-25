@@ -34,4 +34,10 @@ public class BunTests {
         String actualName = bun.getName();
         assertEquals("Название булочки не корректно", actualName, name);
     }
+
+    @Test
+    public void getPriceReturnCorrectValue(){
+        float actualPrice = bun.getPrice();
+        assertEquals("Цена буллочки не корректна", actualPrice, price,0);
+    }
 }
