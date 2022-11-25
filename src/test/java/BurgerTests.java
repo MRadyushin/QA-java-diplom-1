@@ -30,5 +30,11 @@ public class BurgerTests {
         assertTrue(burger.ingredients.contains(ingredient));
     }
 
-
+    @Test
+    public void removeIngredientRemoveIngridientFromListCorrect() {
+        Burger burger = new Burger();
+        burger.addIngredient(ingredient);
+        burger.removeIngredient(0);
+        assertFalse(burger.ingredients.contains(ingredient));
+    }
 }
