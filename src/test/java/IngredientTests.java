@@ -38,13 +38,13 @@ public class IngredientTests {
     @Test
     public void getNameReturnCorrectValue() {
         String actualName = ingredient.getName();
-        assertEquals("Name Ingredient is incorrect", actualName, name);
+        assertEquals("Название ингридиента некорректно", actualName, name);
     }
 
     @Test
     public void getPriceReturnCorrectValue() {
         float actualPrice = ingredient.getPrice();
-        assertEquals("Name Ingredient is incorrect", actualPrice, price, 0);
+        assertEquals("Сумма ингридиента некорректна", actualPrice, price, 0);
     }
 
     @Test
