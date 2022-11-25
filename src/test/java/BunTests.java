@@ -1,7 +1,10 @@
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import praktikum.*;
 
+import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class BunTests {
 
@@ -20,5 +23,15 @@ public class BunTests {
                 {"Жёлтая", 100.5f},
                 {"Белая", 10.55f}
         };
+    }
+
+    @Before
+    public void setUp(){
+        this.bun = new Bun(name, price);
+    }
+    @Test
+    public void getNameReturnCorrectValue(){
+        String actualName = bun.getName();
+        assertEquals("Название булочки не корректно", actualName, name);
     }
 }
