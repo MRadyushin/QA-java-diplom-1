@@ -7,6 +7,8 @@ import praktikum.*;
 
 import static org.junit.Assert.*;
 
+import static org.mockito.Mockito.when;
+
 @RunWith(MockitoJUnitRunner.class)
 public class BurgerTests {
 
@@ -47,4 +49,14 @@ public class BurgerTests {
         assertEquals(ingredient, burger.ingredients.get(1));
     }
 
+    @Test
+    public void getPriceCountPriceCorrect() {
+        Burger burger = new Burger();
+        when(bun.getPrice()).thenReturn(3.8f);
+        when(ingredient.getPrice()).thenReturn(2.4f);
+        burger.setBuns(bun);
+        burger.addIngredient(ingredient);
+        float actual = burger.getPrice();
+        assertEquals(0, Float.compare(10, actual));
+    }
 }
