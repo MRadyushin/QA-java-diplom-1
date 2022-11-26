@@ -8,7 +8,7 @@ import praktikum.*;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class IngredientTests {
+public class IngredientTest {
 
     private final String ingredientTypeValue;
     private final String name;
@@ -16,7 +16,7 @@ public class IngredientTests {
     private Ingredient ingredient;
     private IngredientType ingredientType;
 
-    public IngredientTests(String ingredientTypeValue, String name, float price) {
+    public IngredientTest(String ingredientTypeValue, String name, float price) {
         this.ingredientTypeValue = ingredientTypeValue;
         this.name = name;
         this.price = price;
@@ -36,19 +36,19 @@ public class IngredientTests {
     }
 
     @Test
-    public void getNameReturnCorrectValue() {
+    public void getNameReturnCorrectValueTest() {
         String actualName = ingredient.getName();
         assertEquals("Название ингридиента некорректно", actualName, name);
     }
 
     @Test
-    public void getPriceReturnCorrectValue() {
+    public void getPriceReturnCorrectValueTest() {
         float actualPrice = ingredient.getPrice();
         assertEquals("Сумма ингридиента некорректна", actualPrice, price, 0);
     }
 
     @Test
-    public void getTypeReturnCorrectValue() {
+    public void getTypeReturnCorrectValueTest() {
         assertEquals(this.ingredientType.valueOf(ingredientTypeValue), this.ingredient.getType());
     }
 

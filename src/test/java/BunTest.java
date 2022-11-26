@@ -6,12 +6,12 @@ import praktikum.*;
 
 import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
-public class BunTests {
+public class BunTest {
 
     private Bun bun;
     private String name;
     private float price;
-    public BunTests(String name, float price){
+    public BunTest(String name, float price){
         this.name=name;
         this.price=price;
     }
@@ -30,13 +30,13 @@ public class BunTests {
         this.bun = new Bun(name, price);
     }
     @Test
-    public void getNameReturnCorrectValue(){
+    public void getNameReturnCorrectValueTest(){
         String actualName = bun.getName();
         assertEquals("Название булочки не корректно", actualName, name);
     }
 
     @Test
-    public void getPriceReturnCorrectValue(){
+    public void getPriceReturnCorrectValueTest(){
         float actualPrice = bun.getPrice();
         assertEquals("Цена буллочки не корректна", actualPrice, price,0);
     }

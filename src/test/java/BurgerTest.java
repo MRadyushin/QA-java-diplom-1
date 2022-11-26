@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class BurgerTests {
+public class BurgerTest {
 
     @Mock
     Bun bun;
@@ -19,21 +19,21 @@ public class BurgerTests {
     Ingredient ingredient;
 
     @Test
-    public void setBunsReturnCorrectValue() {
+    public void setBunsReturnCorrectValueTest() {
         Burger burger = new Burger();
         burger.setBuns(bun);
         assertEquals(bun, burger.bun);
     }
 
     @Test
-    public void addIngredientAddValueToListCorrect() {
+    public void addIngredientAddValueToListCorrectTest() {
         Burger burger = new Burger();
         burger.addIngredient(ingredient);
         assertTrue(burger.ingredients.contains(ingredient));
     }
 
     @Test
-    public void removeIngredientRemoveIngridientFromListCorrect() {
+    public void removeIngredientRemoveIngridientFromListCorrectTest() {
         Burger burger = new Burger();
         burger.addIngredient(ingredient);
         burger.removeIngredient(0);
@@ -41,7 +41,7 @@ public class BurgerTests {
     }
 
     @Test
-    public void moveIngredientMoveIngredientToLIst() {
+    public void moveIngredientMoveIngredientToLIstTest() {
         Burger burger = new Burger();
         burger.addIngredient(ingredient);
         burger.addIngredient(ingredient);
@@ -50,7 +50,7 @@ public class BurgerTests {
     }
 
     @Test
-    public void getPriceCountPriceCorrect() {
+    public void getPriceCountPriceCorrectTest() {
         Burger burger = new Burger();
         when(bun.getPrice()).thenReturn(3.8f);
         when(ingredient.getPrice()).thenReturn(2.4f);
@@ -61,7 +61,7 @@ public class BurgerTests {
     }
 
     @Test
-    public void getReceiptReturnCorrectValue() {
+    public void getReceiptReturnCorrectValueTest() {
         Burger burger = new Burger();
         Ingredient ingredient = new Ingredient(IngredientType.FILLING, "dinosaur", 200f);
         when(bun.getName()).thenReturn("white bun");

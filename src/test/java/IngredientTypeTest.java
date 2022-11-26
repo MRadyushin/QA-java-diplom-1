@@ -7,10 +7,10 @@ import static org.junit.Assert.assertTrue;
 import praktikum.*;
 
 @RunWith(Parameterized.class)
-public class IngredientTypeTests {
+public class IngredientTypeTest {
     private IngredientType ingredientType;
     private final String name;
-    public IngredientTypeTests(String name){
+    public IngredientTypeTest(String name){
         this.name=name;
     }
     @Parameterized.Parameters(name = "Тип Ингридиента: {0}")
@@ -22,7 +22,7 @@ public class IngredientTypeTests {
     }
 
     @Test
-    public void ingredientTypeReturnCorrectValues() {
+    public void ingredientTypeReturnCorrectValuesTest() {
         boolean available = true;
         try {
             ingredientType.valueOf(name);
